@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import { Container, Content, Footer, FooterBottom, Top, DivTex,  Icon ,Div, Span, DivLink } from './style';
 
 
 export const Why = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <Footer>
@@ -51,7 +53,7 @@ export const Why = () => {
         </Div>
         <Div>
           <DivLink>Copyright © 2021 CreativeLayers. All Right Reserved.</DivLink>
-          <Top><Icon.Left/></Top>
+          <Top onClick={() => navigate("/home")}><Icon.Left/></Top>
           
         </Div>
       </FooterBottom>

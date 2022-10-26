@@ -8,6 +8,7 @@ const Container = styled.div`
   padding: 10px 130px;
   max-width: 1440px;
   width: 100%;
+  // background-color: red;
   margin-top: 96px;
 `;
 

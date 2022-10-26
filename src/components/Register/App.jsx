@@ -28,6 +28,7 @@ const Register = () =>{
             
         }).then(()=> setState({}))
     }
+    
 
     return(
 

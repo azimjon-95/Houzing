@@ -32,7 +32,7 @@ export const Recommended = () => {
       });
   }, []);
   return (
-    <Container>
+    <Container> 
       <Content>
         <h1 className='title'>Recommended</h1>
         <div className='info'>

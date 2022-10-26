@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 :root {
@@ -20,6 +21,7 @@ body {
 
   /* padding */
   --padding: 0 130px;
+  --width: 1440px;
 }
 
 .title {

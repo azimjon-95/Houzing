@@ -1,34 +1,26 @@
-const { REACT_APP_BASE_URL} = process.env;
+const { REACT_APP_BASE_URL } = process.env;
 
-export const useRequest = () =>{
-    const request = async ({
-        url,
-        method = 'GET',
-        body,
-        token,
-        headers = {},
-    })=>{
-        console.log(url,
-            method,
-            body,
-            token,
-            headers,)
-        headers['Content-Type'] = 'application/json';
-        if (token) headers.Authorization = `Bearer ${token}`;
-        
-        return fetch(`${REACT_APP_BASE_URL}${url}`,{
-            method,
-            headers,
-            body: JSON.stringify(body),
-        })
-        .then((res)=> res.json())
-        .then((res)=> {
-            console.log(res);
-            return res;
-        })
+export const useRequest = () => {
+  const request = async ({ me, url, method = "GET", body, token, headers }) => {
+    if (token)
+      headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
 
-    }
-    return request;
-}
+    const options = {
+      method,
+      headers: { ...headers, "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    };
+
+    return fetch(
+      `${
+        me ? "https://houzing-app.herokuapp.com/api" : REACT_APP_BASE_URL
+      }${url}`,
+      options
+    ).then((res) => res.json());
+  };
+
+  return request;
+};
 
 export default useRequest;
+

@@ -6,7 +6,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF;
+    background: #e6e9ec;
 `;
 export const Box = styled.div`
     width: 580px;
